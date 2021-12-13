@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border"> 
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-list-header>Discover</ion-list-header>
+    <ion-toolbar>
+      <ion-searchbar #q
+            animated
+            [(ngModel)]="searchDummyNoUse"
+            [showCancelButton]="true"
+            (keyup.enter)="search(q.value)"
+            placeholder="Search a book or author">
+      </ion-searchbar> 
+    </ion-toolbar>
+  </ion-list>
+
+  <ion-item>
+    <ion-label *ngIf="!SearchStarted">Popular Books</ion-label> 
+
+    <ion-label *ngIf="SearchStarted" class="back-link" (click)="browse()"> 
+      <ion-icon name="arrow-back-outline"></ion-icon> 
+      Search result for {{SKeyword}}
+    </ion-label>  
+    
+  </ion-item>
+  
+  <ion-row>
+
+    <div class="container">
+      <div class="card animate__animated animate__fadeInLeft"  *ngFor="let books of NewBooks">
+        <div class="card-body">
+          <img src="{{books.image}}" class="float-left rounded-circle" width="50px" height="auto">
+          <div class="message">
+            <p class="card-title"><strong>{{books.title}}</strong></p> 
+            <h6 class="card-subtitle mb-2 text-muted">Price {{books.price}}</h6> 
+          </div>
+          <div class="actions">
+            <ion-button color="medium" expand="full" (click)="preview(books.isbn13)" size="small">Preview</ion-button>
+          </div>
+        </div>
+      </div> 
+    </div> 
+ 
+  </ion-row>
+  

@@ -1,0 +1,55 @@
+
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="main"></ion-back-button>
+    </ion-buttons>
+    <ion-button color="light" shape="round" size="small" class="btn">
+      <ion-icon slot="start" name="heart-outline" class="heart"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div class="container">
+    <div class="row center">
+      <img src="{{image}}" class="float-left rounded-circle" width="60%" height="auto">
+      <h3>{{title}}</h3>
+      <p>{{desc}}</p> 
+    </div>
+    <div class="row">
+      <hr> 
+      <details>
+        <summary>Details</summary>
+        <table class="table"> 
+          <tbody>
+            <tr><td>Author: <strong>{{authors}}</strong></td></tr> 
+            <tr><td>Publisher: <strong>{{publisher}}</strong></td></tr>
+            <tr><td>Price: <strong>{{price}}</strong></td></tr>
+            <tr><td>isbn13: <strong>{{isbn13}}</strong></td></tr>
+            <tr><td>isbn10: <strong>{{isbn10}}</strong></td></tr>
+            <tr><td>Rating: <strong>{{rating}}</strong></td></tr>
+            <tr><td>Year: <strong>{{year}}</strong></td></tr>
+          </tbody>
+        </table> 
+      </details>  
+
+    </div>
+
+    <div class="row" *ngIf="HavePreview"> 
+      <details>
+        <summary>Readable PDF</summary>
+        <p *ngFor="let pdfLink of PDFValues"><a href="{{pdfLink}}">{{pdfLink}}</a></p>
+      </details> 
+    </div>
+
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+    <div>&nbsp;</div>
+  </div>
+ 
+</ion-content>

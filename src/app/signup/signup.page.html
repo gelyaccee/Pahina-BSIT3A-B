@@ -1,0 +1,40 @@
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    </div>
+    <ion-list lines="none" class="ion-margin ion-text-center">
+      
+      <ion-list-header>CREATE NEW ACCOUNT</ion-list-header>
+    
+    <div>  
+    <ion-item class="ion-margin">
+      <ion-input type="text" [(ngModel)]="name" placeholder="Name" clearInput></ion-input>
+    </ion-item>
+    </div>
+    <div>  
+      <ion-item class="ion-margin">
+      <ion-input type="text" [(ngModel)]="email" placeholder="Email" clearInput></ion-input>
+    </ion-item>
+    </div>
+    <div>  
+      <ion-item class="ion-margin">
+      <ion-input type="text" [(ngModel)]="username" placeholder="Username" clearInput></ion-input>
+    </ion-item>
+    </div>
+    <div>  
+    <ion-item class="ion-margin">
+      <ion-input type="password" [(ngModel)]="password" placeholder="Password" clearInput></ion-input>
+    </ion-item>
+    </div>
+    <div align="center"> 
+      <ion-button shape="round" strong="true" color="medium" routerLink='/home'>CANCEL</ion-button>
+      <ion-button shape="round" strong="true" color="medium" (click)="signup()">
+        SIGN UP
+        <ion-icon type="submit" name="log-in" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+
+</ion-list>
+</ion-content>
+
+
+

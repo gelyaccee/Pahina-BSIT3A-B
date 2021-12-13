@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+  <div id="bg">
+    <ion-fab vertical="bottom"  horizontal="center" edge slot="fixed">
+    <ion-fab-button color="medium" routerLink='/home'>
+      <ion-icon name="close-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  </div>
+  
+  <ion-list lines="none" class="ion-margin"> 
+    <ion-list-header>Welcome to Pahina</ion-list-header>
+    <div>
+    <ion-item class="ion-margin">
+      <ion-input type="text" placeholder="Enter username" required [(ngModel)]="username" #name="ngModel"></ion-input>
+    </ion-item>
+    </div>
+    <div>
+    <ion-item class="ion-margin">
+      <ion-input type="password" placeholder="Enter password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </div>
+    <div align="right">
+      <ion-button shape="round" strong="true" class="ion-margin-end" color="medium" (click)="login()">
+        SIGN IN
+        <ion-icon name="log-in" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </ion-list>
+  
+</ion-content>
