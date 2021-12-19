@@ -11,7 +11,13 @@ import { RepositoryService } from '../services/repository.service';
 })
 export class MainPage implements OnInit {
 
-  NewBooks = [] 
+  NewBooks = []
+  tempNewBooks = "0"
+
+  all = true
+  free = false
+  priced = false
+
   SearchStarted = false
   SKeyword = ""
   searchDummyNoUse = ""
@@ -32,7 +38,26 @@ export class MainPage implements OnInit {
 
   }
 
+  filter(value){   
+    this.tempNewBooks = value['detail']['value']   
+    this.filterView()
+  }
 
+  filterView(){
+    if(this.tempNewBooks == "0")  {
+      this.all = true
+      this.free = false
+      this.priced = false
+    }else if(this.tempNewBooks == "1")  {
+      this.all = false
+      this.free = true
+      this.priced = false
+    }else{
+      this.all = false
+      this.free = false
+      this.priced = true
+    }
+  }
   search(q: string) {  
       this.api_login.findBook(q).subscribe((result:any) =>{  
         this.NewBooks = result['books'] 

@@ -36,7 +36,19 @@ const routes: Routes = [
   {
     path: 'books-preview',
     loadChildren: () => import('./modals/books-preview/books-preview.module').then( m => m.BooksPreviewPageModule)
+  },  {
+    path: 'favorites',
+    loadChildren: () => import('./pages/favorites/favorites.module').then( m => m.FavoritesPageModule)
   },
+  {
+    path: 'edit-profile',
+    loadChildren: () => import('./pages/edit-profile/edit-profile.module').then( m => m.EditProfilePageModule)
+  },
+  {
+    path: 'history',
+    loadChildren: () => import('./history/history.module').then( m => m.HistoryPageModule)
+  },
+
 
 ];
 

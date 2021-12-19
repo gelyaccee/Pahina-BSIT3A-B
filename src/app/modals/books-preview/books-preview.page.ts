@@ -65,7 +65,7 @@ export class BooksPreviewPage implements OnInit {
 
       if(result['pdf'] != undefined){ 
         this.PDF = result['pdf'] 
-        this.PDFValues.push(this.PDF['Free eBook'])
+        this.PDFValues.push(this.PDF['Free eBook']) 
         this.HavePreview = true
       }
     },(error) => { 
@@ -74,7 +74,12 @@ export class BooksPreviewPage implements OnInit {
 
   }
   
- 
+  share_facebook(value){
+    value = value.replace('://','%3A%2F%2F')
+    let Sharelink = "https://www.facebook.com/sharer/sharer.php?u="+value+"%2F&amp;src=sdkpreparse"
+    console.log(Sharelink)
+    window.open(Sharelink, '_blank') 
+  }
 
   ngOnInit() {
   }

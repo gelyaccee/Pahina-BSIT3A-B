@@ -8,19 +8,38 @@
   </ion-toolbar>
 </ion-header>
 
-  <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
-    <div class="card p-4">
-        <div class=" image d-flex flex-column justify-content-center align-items-center"> 
-          <button class="btn btn-secondary"> 
-          <img src="img src=../../../assets//img/avatar.png" height="100" width="100" />
-        </button> 
-        <span class="name mt-3">{{myProfile[0]['name']}}</span> 
+<ion-content [fullscreen]="true">
+  <div class="main_content_div">
+    <div class="user_div">
+      <div class="first_div">
+        <span class="name mt-3">{{myProfile[0]['name']}}</span> <br>
         <span class="idd">{{myProfile[0]['email']}}</span>
-            
-            <div class=" px-2 rounded mt-4 date "> <span class="join">Joined December 2021</span> </div>
-        </div>
-    </div>
+  </div>
+      <div class="user_back"[style.backgroundImage]="'url(./assets/img/dp.jpg)'">
+      </div>
+ </div>
+ <div class="content_div">
+   
+  <div class="list_div">
+   <ion-item lines="none" routerLink="/edit-profile" detail>
+   <ion-label>Edit Profile</ion-label>
+  </ion-item>
+  </div>
+
+  <div class="list_div">
+    <ion-item lines="none" routerLink="/favorites" detail> 
+    <ion-label>Favorites Books</ion-label>
+  </ion-item>
+   </div>
+
+   <div class="list_div">
+     <ion-item lines="none" routerLink="/home" detail>
+    <ion-label>Log out</ion-label>
+    </ion-item>
+   </div>
+  </div>
 </div>
+</ion-content>
 
  
 

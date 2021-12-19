@@ -40,6 +40,18 @@
     <div class="row" *ngIf="HavePreview"> 
       <details>
         <summary>Readable PDF</summary>
+        <table>
+          <tr>
+            <th>View</th>
+            <th></th>
+            <th>Share</th>
+          </tr>
+          <tr *ngFor="let pdfLink of PDFValues">
+            <td><a href="{{pdfLink}}">{{pdfLink}}</a></td> 
+            <td></td>
+            <td><button class="btn1" (click)="share_facebook(pdfLink)">Share to Facebook</button></td>
+          </tr>
+        </table>
         <p *ngFor="let pdfLink of PDFValues"><a href="{{pdfLink}}">{{pdfLink}}</a></p>
       </details> 
     </div>

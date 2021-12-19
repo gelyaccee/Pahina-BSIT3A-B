@@ -1,87 +1,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
-body {
-    background-color: #000;
-}
 
-.card {
-    width: 350px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.5s;
+.main_content_div {
+    width: 100%;
+    .user_div {
+        padding: 20px;
+        width: 100%;
+        height: 260px;
+        background: #6f6c9e;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
     
+    .first_div{
+        padding-top: 70px;
+    }
+    
+    .user_back{
+        height: 100px;
+        width: 80px;
+        border: 3px solid white;
+        background-position: top;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 7px;
+    }
+}
+.content_div{
+    background: white;
+    width: 100%;
+    border-top-left-radius: 75px;
+    margin-top: -90px;
+    padding: 20px;
+    padding-top: 30px;
+    .list_div {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5px;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+        margin-top: 20px;
+        padding: 13px;
+        ion-label{
+            width: 350px;
+            font-size: 15px;
+            font-family: 'Varela Round', sans-serif;
+        }
+    }
+}
 }
 
-.image img {
-    transition: all 0.5s;
-}
-
-.card:hover .image img {
-    transform: scale(1.5);
-}
-
-.btn {
-    height: 140px;
-    width: 140px;
-    border-radius: 50%;
-}
 
 .name {
     font-size: 22px;
-    font-weight: bold;
     font-family: 'Varela Round', sans-serif;
+    color: white;
 }
 
 .idd {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 12px;
     font-family: 'Varela Round', sans-serif;
-}
-
-.idd1 {
-    font-size: 12px;
-}
-
-.number {
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.follow {
-    font-size: 12px;
-    font-weight: 500;
-    color: #444444;
-}
-
-.btn1 {
-    height: 40px;
-    width: 150px;
-    border: none;
-    background-color: #000;
-    color: #aeaeae;
-    font-size: 15px;
-}
-
-.text span {
-    font-size: 13px;
-    color: #545454;
-    font-weight: 500;
-}
-
-.icons i {
-    font-size: 19px;
-}
-
-hr .new1 {
-    border: 1px solid;
-}
-
-.join {
-    font-size: 14px;
-    color: #a0a0a0;
-    font-weight: bold;
-}
-
-.date {
-    background-color: #ccc;
+    color: white;
 }
