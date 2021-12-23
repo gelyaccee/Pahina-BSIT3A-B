@@ -4,7 +4,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="main"></ion-back-button>
     </ion-buttons>
-    <ion-button color="light" shape="round" size="small" class="btn">
+    <ion-button (click)="getBook()" value="favorite" color="light" shape="round" size="small" class="btn">
       <ion-icon slot="start" name="heart-outline" class="heart"></ion-icon>
     </ion-button>
   </ion-toolbar>

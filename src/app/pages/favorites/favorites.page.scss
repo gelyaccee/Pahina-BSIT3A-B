@@ -1,0 +1,50 @@
+
+
+ion-title {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8em;
+    font-family: 'Varela Round', sans-serif;
+}
+
+ion-item {
+    font-size: 1.3rem;
+    font-family: 'Varela Round', sans-serif;
+}
+
+ion-list {
+    ion-list-header{
+        font-weight: 1000;
+        font-size: 1.5rem;
+        font-family: 'Varela Round', sans-serif;
+    }
+}
+
+
+
+.card .card-body .message {
+    padding-left: 80px;
+    
+    &::after {
+      clear: both;
+    }
+  }
+  
+  .card .card-body .actions {
+    margin-top: 5px;
+  }
+  .card-title{
+      margin-top: -55px;
+  } 
+  .card{
+    margin-bottom: 10px;
+  }
+
+  div.icon-inner{
+    display: none;
+  }
+
+  .back-link{
+    color: blue;
+    cursor: pointer;
+  }

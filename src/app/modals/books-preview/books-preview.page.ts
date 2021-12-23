@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Router } from '@angular/router'; 
 import { BooksService } from '../../services/books.service'; 
+import { UserService } from '../../services/user.service'; 
 import { RepositoryService } from '../../services/repository.service';  
 
 @Component({
@@ -38,14 +39,15 @@ export class BooksPreviewPage implements OnInit {
 
   constructor(private router: Router,  
     private api_login: BooksService,
+    private api_user: UserService,
     private api_repo: RepositoryService) {
      this.view(api_repo.BookstoPreview['isbn13']); 
+ 
     }
   
    view(isbn){
     this.api_login.previewBook(isbn).subscribe((result:any) =>{   
-      this.BookToPreviewData = result 
-      console.log(this.BookToPreviewData)
+      this.BookToPreviewData = result  
 
       this.authors = result['authors']
       this.desc = result['desc']
@@ -63,6 +65,8 @@ export class BooksPreviewPage implements OnInit {
       this.url = result['url']
       this.year = result['year']
 
+      this.savetoHistory();
+      
       if(result['pdf'] != undefined){ 
         this.PDF = result['pdf'] 
         this.PDFValues.push(this.PDF['Free eBook']) 
@@ -87,6 +91,38 @@ export class BooksPreviewPage implements OnInit {
   public toggleSelected() {
     this.selected = !this.selected;
     this.selectedChange.emit(this.selected);
+  }
+
+  savetoHistory(){
+
+    this.api_user.save_history(
+      this.api_repo.UserProfile[0].id,
+      this.isbn13,
+      this.image,
+      this.title,
+      this.authors
+    ).subscribe((result:any) =>{   
+    });
+  }
+  getBook(){ 
+    // save to database
+    this.api_user.addFavorites(
+      this.api_repo.UserProfile[0].id,
+      this.isbn13,
+      this.image,
+      this.title,
+      this.authors
+    ).subscribe((result:any) =>{   
+    });
+
+
+    // to preview data
+    this.api_user.fetchFavorites(
+      this.api_repo.UserProfile[0].id
+    ).subscribe((result:any) =>{   
+      console.log(result)
+    });
+
   }
 
 }

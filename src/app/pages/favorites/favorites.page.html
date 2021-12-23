@@ -1,9 +1,27 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>favorites</ion-title>
+    <ion-title>Favorites</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="main"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="card animate__animated animate__fadeInLeft" *ngFor="let books of Favorites">
+      <div class="card-body">
+        <img src="{{books.image}}" class="float-left rounded-circle" width="50px" height="auto">
+        <div class="message">
+          <p class="card-title"><strong>{{books.title}}</strong></p>  
+        </div>
+        <div class="actions">
+          <ion-button color="medium" expand="full" (click)="preview(books.isbn13)" size="small">Preview</ion-button>
+        </div>
+      </div>
+    </div> 
+  </div> 
+ 
 </ion-content>
